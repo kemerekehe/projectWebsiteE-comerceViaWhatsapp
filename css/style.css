@@ -1,0 +1,675 @@
+:root{
+    --primary: #6A924D;
+    --bg: #172717;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background: color rgba(1, 1, 1, 1.8);
+    border-bottom: 1px solid var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    display: inline-flex;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;;
+    cursor: pointer;
+    font-style: italic;
+    align-items: center;
+}
+
+.navbar .navbar-logo img {
+    width: 3rem;
+    height: 3rem;
+    border: #000 5cap;
+}
+
+.navbar .navbar-logo span {
+    color: #3e87bd;
+}
+
+.navbar .navbar-nav a {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1.3rem;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary)
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #ffffff;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+    color: #ffffff;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+.navbar-extra span {
+    background-color: #d3301a;
+    position: absolute;
+    top: 50%;
+    right: 8rem;
+    width: 10px;
+    height: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+.cart-tab {
+    width: 30rem;
+    background-color: #fff;
+    color: var(--primary);
+    position: fixed;
+    top: 6.2rem;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 30rem ;
+    grid-template-rows: 4rem 1fr 4rem;
+    transform-origin: right;
+    transition: 0.3s;
+}
+
+.cart-tab.active {
+    right: 0;
+}
+
+.cart-tab h1 {
+    padding: 1.3rem;
+    font-size: 1.7rem;
+    font-weight: 300;
+    border-bottom: 1px solid #3e87bd;
+    width: 100%;
+}
+
+.cart-tab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cart-tab .btn button {
+    background-color: #3e87bd;
+    color: #fff;
+    border: none;
+    font-weight: 400;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cart-tab .cart-items .items img {
+    width: 100%;
+}
+
+.cart-tab .cart-items .items {
+    display: grid;
+    grid-template-columns: 15% 24% 21% 30%;
+    gap: 4px;
+    text-align: center;
+    align-items: center;
+}
+
+.cart-items .quantity span {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--bg);
+    color: #fff;
+    padding-top: 0.2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cart-items .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: #000;
+}
+
+.cart-items .items:nth-child(even){
+    background-color: #ebeaea;
+}
+
+.cart-items {
+    overflow: auto;
+}
+
+.cart-items::-webkit-scrollbar{
+    width: 0;
+}
+
+
+/*Hero section*/
+
+.hero {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    background-image: url(../img/SMU_v39_4kdcf_WM.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(17, 40, 17, 0.905) 20%, rgba(255, 255, 255, 0) 60%);
+}
+
+.hero .element {
+    padding: 1.5rem;
+    max-width: 60rem;
+}
+
+.hero .element h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.hero .element p {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 200;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+.hero .element span{
+    color: #3e87bd;
+}
+.hero .element .cta{
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    background-color: #3e87bd;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(17, 40, 17, 0.5);
+}
+
+.about, .product, .contact {
+    padding: 7rem 7% 1.4rem;
+}
+
+.about span, .product span, .contact span {
+    color: #3e87bd;
+}
+
+.about h2, 
+.product h2, .contact h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 2.5rem;
+    color: #fff;
+}
+
+.about .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.about .row .about-img {
+    align-items: center;
+    justify-items: center;
+    width: 50%;
+}
+
+.about .row .about-img video source {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .about-img video {
+        width: 100%;
+    }
+}
+
+.about .row .content {
+    flex: 1 1 35rem;
+    padding: 0 2rem;
+}
+
+.about .row .content h3 {
+    font-size: 1.8rem;
+    margin: 1.3rem;
+}
+
+.about .row .content p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 100;
+    line-height: 1.4;
+}
+
+.product p, .contact p {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-weight: 100;
+    line-height: 1.6;
+    color: #fff;
+    font-size: 15px;
+}
+
+.product .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+    padding: 0;
+    gap: 1.8rem;
+}
+
+.product .row .menu-card{
+    text-align: center;
+    padding-bottom: 1.5rem;
+    width: 18rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10%;
+    padding: 1rem;
+}
+
+.product .row .menu-card img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.product .row .menu-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffff;
+}
+
+.product p {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+}
+
+.product .row .menu-card .btn {
+    display: flex;
+    justify-content: center;
+    border-color: #fff;
+    gap: 0.8rem;
+}
+
+.product .row .menu-card .btn button {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
+    border-radius: 1.2rem;
+    background-color: var(--primary);
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition-duration: 0.3s;
+    border: 0.2rem solid var(--primary);
+}
+
+.product .row .menu-card .btn button:hover {
+    background-color: var(--bg);
+    border-color: #ffff;
+}
+
+.contact .contact-info .overlay-section form {
+    padding: 1rem 1rem;
+    text-align: center;
+    height: 100%;
+}
+
+.contact .contact-info .overlay-section form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: var(--bg);
+    border: 1px solid #fff;
+    padding: auto;
+}
+
+.contact .contact-info .overlay-section form .message {
+    width: 100%;
+    height: 60%;
+}
+
+.contact .contact-info .overlay-section form .name {
+    height: 15%;
+}
+
+.contact .contact-info .overlay-section form .input-group input{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    overflow-wrap: break-word;
+    height: 100%;
+}
+.contact .contact-info .overlay-section form .message textarea{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    height: 100%;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar{
+    width: 0;
+}
+
+.contact .contact-info .overlay-section form .kirim {
+    width: 5em;
+    background-color:#3e87bd;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5em 0.1em;
+    margin-top: 1rem;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.contact {
+    position: relative;
+}
+
+.contact .contact-info {
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.contact-info .map {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.contact .overlay-section {
+    padding: 0.3rem;
+    position: absolute;
+    width: 25vw;
+    height: 50vh;
+    top: 50%;
+    bottom: 20%;
+    border-radius: 5px;
+    left: 60%;
+    margin: auto;
+    background-color: var(--primary);
+}
+
+footer {
+    padding: 0;
+    margin-top: 5rem;
+    box-sizing: border-box;
+    background-color: var(--primary);
+    width: 100%;
+    padding: 1rem 0.4rem 0.3rem;
+}
+
+footer .sosial {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+footer .sosial a {
+    display: flex;
+    text-decoration: none;
+    padding: 1.1rem;
+    background-color: #fff;
+    margin-bottom: 1rem;
+    border-radius: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .sosial a i{
+    color:#3e87bd;
+}
+
+footer .sosial a:hover {
+
+    background-color: var(--bg);
+    color: #fff;
+    transition: 0.3s;
+}
+
+.credit {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0.2rem;
+}
+
+.credit a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.credit a:hover {
+    text-decoration: underline;
+}
+/* media Queries*/
+/*laptop*/
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+/*Tablet*/
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #d3301a;
+        width: 20rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.2);
+    }
+
+    .navbar-extra span {
+        right: 9rem;
+    }
+    
+    .about .row {
+        flex-wrap: wrap;
+    }
+    
+    .about .row .about-img video{
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+    }
+    
+    .about .row .content {
+        margin-top: 1rem;
+        font-size: 1.6rem;
+    }
+
+    .product p{
+        font-size: 1.2rem;
+    }
+
+    .contact .contact-info {
+        flex-wrap: wrap;
+        height: 50rem;
+        gap: 2rem;
+    }
+
+    .contact .contact-info .map {
+        height: 50%;
+        border-radius: 5px;
+    }
+
+    .contact .contact-info .overlay-section {
+        position:inherit;
+        padding-top: 0%;
+    }
+
+    .contact .contact-info {
+        display: flex;
+        margin-top: 2rem;
+    }
+    
+    .contact .contact-info .overlay-section {
+        flex: 1 1 45rem;
+        text-align: center;
+        height: 30rem;
+    }
+    
+    .contact .contact-info form .input-group {
+        display: flex;
+        height: 10%;
+        align-items: center;
+        margin-top: 1rem;
+        border: 1px solid #fff;
+    }
+    
+    .contact .contact-info form .input-group input{
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .contact .contact-info .overlay-section form .message {
+        height: 40%;
+    }
+    .contact .contact-info .overlay-section form .message textarea{
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.2rem;
+        height: 100%;
+        resize: none;
+    }
+    
+    textarea::-webkit-scrollbar{
+        width: 0;
+    }
+    .contact .contact-info form .kirim {
+        width: 30%;
+        background-color: var(--primary);
+        color: #fff;
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        display: inline-block;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        text-align: center;
+    }
+    
+
+}
+/*Handhone*/
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+}
