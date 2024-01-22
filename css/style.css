@@ -61,7 +61,7 @@ body {
     display: inline-block;
     font-size: 1.3rem;
     align-items: center;
-    margin: 0 1rem;
+    margin: 0rem 1rem;
 }
 
 .navbar .navbar-nav a:hover {
@@ -83,7 +83,7 @@ body {
 
 .navbar .navbar-extra a {
     color: #ffffff;
-    margin: 0 0.5rem;
+    margin: auto;
 }
 
 .navbar .navbar-extra a:hover {
@@ -94,7 +94,7 @@ body {
     background-color: #d3301a;
     position: absolute;
     top: 50%;
-    right: 8rem;
+    right: 6.5%;
     width: 10px;
     height: 10px;
     justify-content: center;
@@ -574,7 +574,9 @@ footer .sosial a:hover {
     }
 
     .navbar-extra span {
-        right: 9rem;
+        position:absolute ;
+        margin-right: 30px;
+        /* right: 60px; */
     }
     
     .about .row {

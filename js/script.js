@@ -28,7 +28,7 @@ document.querySelector('#shopping-cart-btn').onclick = (e) => {
 };
 
 document.addEventListener('click', function (e) {
-    if (closecart.contains(e.target) || (!cartbtn.contains(e.target) && !cartTab.contains(e.target) && !quantitybtn.contains(e.target))){
+    if (closecart.contains(e.target) || cartbtn.contains(e.target) && !quantitybtn.contains(e.target)){
         cartTab.classList.remove('active');
         e.preventDefault();
     }
