@@ -2,8 +2,8 @@ const navbarNav = document.querySelector('.navbar-nav');
 const hamburgerMenu = document.querySelector('#hamburger-menu');
 const cartTab = document.querySelector('.cart-tab');
 const closecart = document.querySelector('.close');
-const cartbtn = document.querySelector('#shopping-cart-btn');
-const quantitybtn = document.querySelectorAll('.items .quantity');
+cartbtn = document.querySelector('.cart-tab');
+// const quantitybtn = document.querySelectorAll('.items .quantity');
 const iconCartSpan = document.querySelector('.shopping-cart-btn span');
 const checkoutBtn = document.querySelector('.checkout');
 const kirimBtn = document.querySelector('.kirim')
@@ -22,30 +22,30 @@ document.addEventListener('click', function (e) {
         navbarNav.classList.remove('active');
     }
 });
-document.querySelector('#shopping-cart-btn').onclick = (e) => {
+
+document.getElementById('shopping-cart-btn').onclick = (e) => {
     cartTab.classList.toggle('active');
     e.preventDefault();
 };
 
 document.addEventListener('click', function (e) {
-    if (closecart.contains(e.target) || cartbtn.contains(e.target) && !quantitybtn.contains(e.target)){
+    if (closecart.contains(e.target)
+    ) {
         cartTab.classList.remove('active');
         e.preventDefault();
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Select all links with hashes
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//         anchor.addEventListener('click', function (e) {
+//             e.preventDefault();
+//             document.querySelector(this.getAttribute('href')).scrollIntoView({
+//                 behavior: 'smooth'
+//             });
+//         });
+//     });
+// });
 
 const addDataToHTML = () => {
     listProductHTML.innerHTML = '';
@@ -57,9 +57,9 @@ const addDataToHTML = () => {
             newProduct.innerHTML = `
                 <img src="${products.image}" alt="brainy">
                 <h3 class="menu-card-title">${products.name}</h3>
-                <p class="menu-card-price">${products.price}</p>
+                <p class="menu-card-price">Rp.${products.price}/${products.quantity}</p>
                 <div class="btn">
-                    <button class="buy-btn">Buy</button>
+                    <button class="buy-btn">Beli</button>
                 </div>
             `;
             listProductHTML.appendChild(newProduct);
@@ -114,7 +114,7 @@ const addCartToHTML = () => {
                 <div class="totalPrice">
                     ${info.price * car.quantity}
                 </div>
-                <div class="quantity">
+                <div id='quantity' class="quantity">
                     <span class="minus">-</span>
                     <span>${car.quantity}</span>
                     <span class="plus">+</span>
@@ -218,6 +218,10 @@ kirimBtn.addEventListener('click', () => {
     sendWhatsAppMessage();
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const mainElement = document.querySelector('.element');
+    mainElement.classList.add('fade-in');
+});
 
 const initApp = () => {
     //get from json

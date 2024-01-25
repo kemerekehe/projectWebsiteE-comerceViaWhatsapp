@@ -1,6 +1,6 @@
 :root{
-    --primary: #6A924D;
-    --bg: #172717;
+    --primary: #597E52;
+    --bg: #F9EFDB;
 }
 
 * {
@@ -27,8 +27,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.4rem 7%;
-    background: color rgba(1, 1, 1, 1.8);
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 1px solid #638889;
     position: fixed;
     top: 0;
     left: 0;
@@ -40,7 +39,7 @@ body {
     display: inline-flex;
     font-size: 2rem;
     font-weight: 700;
-    color: #ffffff;;
+    color: #43766C;
     cursor: pointer;
     font-style: italic;
     align-items: center;
@@ -49,15 +48,15 @@ body {
 .navbar .navbar-logo img {
     width: 3rem;
     height: 3rem;
-    border: #000 5cap;
+    border: #597E52 5cap;
 }
 
 .navbar .navbar-logo span {
-    color: #3e87bd;
+    color: #B2533E;
 }
 
 .navbar .navbar-nav a {
-    color: #ffffff;
+    color: #222222;
     display: inline-block;
     font-size: 1.3rem;
     align-items: center;
@@ -65,7 +64,7 @@ body {
 }
 
 .navbar .navbar-nav a:hover {
-    color: var(--primary)
+    color: #638889;
 }
 
 .navbar .navbar-nav a::after {
@@ -82,16 +81,17 @@ body {
 }
 
 .navbar .navbar-extra a {
-    color: #ffffff;
+    color: var(--primary);
     margin: auto;
 }
 
 .navbar .navbar-extra a:hover {
-    color: var(--primary);
+    color: #F9F9FF;
 }
 
 .navbar-extra span {
-    background-color: #d3301a;
+    color: #fff;
+    background-color: #e92b2b;
     position: absolute;
     top: 50%;
     right: 6.5%;
@@ -130,7 +130,7 @@ body {
     padding: 1.3rem;
     font-size: 1.7rem;
     font-weight: 300;
-    border-bottom: 1px solid #3e87bd;
+    border-bottom: 1px solid #638889;
     width: 100%;
 }
 
@@ -140,7 +140,7 @@ body {
 }
 
 .cart-tab .btn button {
-    background-color: #3e87bd;
+    background-color: var(--primary);
     color: #fff;
     border: none;
     font-weight: 400;
@@ -164,7 +164,7 @@ body {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background-color: var(--bg);
+    background-color: #9DBC98;
     color: #fff;
     padding-top: 0.2rem;
     font-weight: bold;
@@ -197,67 +197,88 @@ body {
     min-width: 100vw;
     display: flex;
     align-items: center;
-    background-image: url(../img/SMU_v39_4kdcf_WM.jpg);
+    background-image: url(../img/Screenshot\ 2024-01-23\ 114950.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
+    justify-content: center;
 }
 
-.hero::after {
-    content: '';
-    display: block;
+.hero::before {
+    content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 20%;
-    bottom: 0;
-    background: linear-gradient(0deg, rgba(17, 40, 17, 0.905) 20%, rgba(255, 255, 255, 0) 60%);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero .element {
+    text-align: center;
     padding: 1.5rem;
-    max-width: 60rem;
+    width: 100%;
+    justify-content: center;
+    z-index: 888;
 }
 
 .hero .element h1 {
-    font-size: 5rem;
+    justify-content: center;
+    font-size: 4rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--bg);
     margin-bottom: 1rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     line-height: 1.2;
 }
 
 .hero .element p {
-    color: #ffffff;
-    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
     margin-top: 1rem;
     line-height: 1.4;
     font-weight: 200;
-    text-shadow: 1px 1px 3px rgb(0, 0, 0);
 }
 .hero .element span{
-    color: #3e87bd;
+    text-shadow: none;
+    color: #FFB534;
 }
 .hero .element .cta{
-    display: inline-block;
-    padding: 1rem 3rem;
+    display: flex;
+    padding: 1rem 1rem;
     font-size: 1.4rem;
-    color: #fff;
+    color: var(--primary);
     align-items: center;
     justify-content: center;
+    margin: auto;
     margin-top: 2rem;
-    background-color: #3e87bd;
+    background-color: var(--bg);
     border-radius: 0.5rem;
-    box-shadow: 1px 1px 3px rgba(17, 40, 17, 0.5);
+    width: 17rem;
+    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
 }
 
-.about, .product, .contact {
+.element {
+    opacity: 0;
+    transform: translateY(20px); /* Optional: Add a slight vertical offset for a smoother transition */
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+/* CSS for the faded-in state of the main element */
+.hero .element.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about, .product, .contact{
     padding: 7rem 7% 1.4rem;
 }
 
 .about span, .product span, .contact span {
-    color: #3e87bd;
+    color: var(--primary);
 }
 
 .about h2, 
@@ -265,59 +286,148 @@ body {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 2.5rem;
-    color: #fff;
+    color: #000;
 }
 
-.about .row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-
-.about .row .about-img {
-    align-items: center;
-    justify-items: center;
-    width: 50%;
-}
-
-.about .row .about-img video source {
+.about h2 {
+    padding-top: 7rem;
     width: 100%;
+    margin-bottom: 0;
+}
+
+.about-element {
+    width: 100vw;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.about {
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.about-element .container {
+    justify-content: center;
+    align-items: center;
+    width: 60rem;
+    overflow: auto;
+}
+.slides {
+    flex: 0 0 100%; /* Setiap .slides memiliki lebar 100% lebar container, dan tidak dapat memperluas lebih jauh */
+    position: relative;
     height: 100%;
 }
 
-@media screen and (min-width: 600px) {
-    .about-img video {
-        width: 100%;
-    }
+.slides img {
+    width: 100%; /* Pastikan gambar memenuhi lebar elemen slides */
+    object-fit: cover;
 }
 
-.about .row .content {
-    flex: 1 1 35rem;
-    padding: 0 2rem;
+.slides p {
+    text-align: left;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    line-height: 20px;
+    height: 100%;
+    width: 30%; /* Atur lebar teks, bisa disesuaikan sesuai kebutuhan */
+    padding: 20px; /* Berikan padding agar teks tidak terlalu dekat dengan tepi */
+    background-color: rgba(255, 255, 255, 0.752); /* Tambahkan latar belakang semi-transparan untuk membaca teks */
 }
 
-.about .row .content h3 {
-    font-size: 1.8rem;
-    margin: 1.3rem;
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
 }
 
-.about .row .content p {
-    color: #fff;
+.slider {
+    display: flex;
+    height: fit-content;
+    overflow-y: hidden;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    background-color: var(--primary);
+}
+
+.slider::-webkit-scrollbar{
+    width: 0;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #ffff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+/* .about .row .about-img {
+    background-color: #F9F9FF;
+    width: 30rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.about .row .about-img img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.about .row .about-img p {
     font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-    font-weight: 100;
-    line-height: 1.4;
 }
 
-.product p, .contact p {
+.about-element .row {
+    justify-content: center;
+    gap: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.about .row h3 {
+    font-size: 1.6rem;
+    margin: 1rem;
+    text-align: center;
+} */
+
+.product p, .content p {
     text-align: center;
     max-width: 30rem;
     margin: auto;
-    font-weight: 100;
     line-height: 1.6;
-    color: #fff;
+    color: #000;
     font-size: 15px;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
 }
 
 .product .row {
@@ -326,33 +436,33 @@ body {
     margin-top: 5rem;
     justify-content: center;
     padding: 0;
-    gap: 1.8rem;
+    gap: 2rem;
 }
 
 .product .row .menu-card{
     text-align: center;
     padding-bottom: 1.5rem;
     width: 18rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
     border-radius: 10%;
     padding: 1rem;
+    background-color: #EBD9B4;
 }
 
 .product .row .menu-card img{
+    border-radius: 10px;
     width: 100%;
     object-fit: cover;
 }
 
 .product .row .menu-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    color: #ffff;
+    color: #000;
 }
 
-.product p {
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
-    font-weight: 500;
+.product .row .menu-card p {
+    color: #638889;
 }
 
 .product .row .menu-card .btn {
@@ -379,8 +489,17 @@ body {
 }
 
 .product .row .menu-card .btn button:hover {
-    background-color: var(--bg);
-    border-color: #ffff;
+    background-color: #9DBC98;
+}
+
+.contact p {
+    text-align: center;
+    width: 100%;
+    line-height: 1.6;
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 2rem;
 }
 
 .contact .contact-info .overlay-section form {
@@ -394,7 +513,7 @@ body {
     align-items: center;
     margin-top: 1rem;
     background-color: var(--bg);
-    border: 1px solid #fff;
+    border: 1px solid #000;
     padding: auto;
 }
 
@@ -547,7 +666,7 @@ footer .sosial a:hover {
         position: absolute;
         top: 100%;
         right: -100%;
-        background-color: #d3301a;
+        background-color: #EBD9B4;
         width: 20rem;
         height: 100vh;
         transition: 0.3s;
@@ -579,20 +698,12 @@ footer .sosial a:hover {
         /* right: 60px; */
     }
     
-    .about .row {
-        flex-wrap: wrap;
-    }
     
-    .about .row .about-img video{
-        object-fit: cover;
-        object-position: center;
-        width: 100%;
-    }
-    
-    .about .row .content {
+    .about .content {
         margin-top: 1rem;
         font-size: 1.6rem;
     }
+
 
     .product p{
         font-size: 1.2rem;

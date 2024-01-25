@@ -1,38 +1,30 @@
 [
     {
         "id": 1,
-        "name": "Smurf Biru",
-        "price": 20000,
-        "image": "./img/smurf-22590.png"
+        "name": "Es Krim Jamur",
+        "price": 5000,
+        "image": "./img/Es-Krim-Jamur.jpeg",
+        "quantity" : "pcs"
     },
     {
         "id": 2,
-        "name": "Smurf Biru",
-        "price": 30000,
-        "image": "./img/smurf-22606.png"
+        "name": "Es Krim Jeruk",
+        "price": 5000,
+        "image": "./img/Es-Krim-Jeruk.jpeg",
+        "quantity" : "pcs"
     },
     {
         "id": 3,
-        "name": "Smurf Biru",
+        "name": "Jamur Crispy",
         "price": 10000,
-        "image": "./img/smurf-22606.png"
+        "image": "./img/Jamur-Crispy.jpeg",
+        "quantity" : "pcs"
     },
     {
         "id": 4,
-        "name": "Smurf Biru",
-        "price": 13000,
-        "image": "./img/smurf-22606.png"
-    },
-    {
-        "id": 5,
-        "name": "Smurf Biru",
-        "price": 22000,
-        "image": "img/smurf-22590.png"
-    },
-    {
-        "id": 6,
-        "name": "Smurf Biru",
-        "price": 21000,
-        "image": "./img/smurf-22606.png"
+        "name": "Pentol Jamur (perKg)",
+        "price": 0,
+        "image": "./img/Pentol-Jamur.jpeg",
+        "quantity" : "g"
     }
 ]
