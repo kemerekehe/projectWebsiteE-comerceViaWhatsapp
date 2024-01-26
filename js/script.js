@@ -178,7 +178,7 @@ const checkout = () => {
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
     // Buka window WhatsApp
-    window.open(`https://wa.me/62859512661373?text=` + encodedMessage);
+    window.open(`https://wa.me/6289512661373?text=` + encodedMessage);
 };
 
 // Fungsi untuk menghitung total keseluruhan
@@ -214,7 +214,7 @@ const sendWhatsAppMessage = () => {
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
     // Open WhatsApp link in a new window/tab
-    window.open(`https://wa.me/62859512661373?text=` + encodedMessage);
+    window.open(`https://wa.me/6289512661373?text=` + encodedMessage);
 }
 
 kirimBtn.addEventListener('click', () => {
