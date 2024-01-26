@@ -146,36 +146,39 @@ listCartHTML.addEventListener('click', (e) => {
     }
 });
 
-checkoutBtn.addEventListener('click', () => {
-    checkout();
-});
-
 const checkout = () => {
     // Buat pesan WhatsApp
-    let whatsappMessage = '--- Checkout Information ---\n';
-
-    if (cart.length > 0) {
-        cart.forEach((item) => {
-            let positionThisProductInCart = listProduct.findIndex((value) => value.id == item.product_id);
-            let productInfo = listProduct[positionThisProductInCart];
-
-            whatsappMessage += `Product: ${productInfo.name}\n`;
-            whatsappMessage += `Price: ${productInfo.price}\n`;
-            whatsappMessage += `Quantity: ${item.quantity}\n`;
-            whatsappMessage += `Total: ${productInfo.price * item.quantity}\n\n`;
-        });
-
-        whatsappMessage += `Total Quantity: ${totalQuantity}\n`;
-        whatsappMessage += `Grand Total: ${calculateGrandTotal()}\n`;
-    } else {
-        whatsappMessage += 'No items in the cart.\n';
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    var address = document.getElementById('address').value;
+    if (name.trim() === '' || phone.trim() === '' || address.trim() === '') {
+        alert('Harap isi formulir pembelian sebelum melanjutkan.');
+        return
     }
+
+    let whatsappMessage = '--- Checkout Information ---\n';
+    whatsappMessage += `Nama:${name}\n`;
+    whatsappMessage += `Nomor Telepon:${phone}\n`;
+    whatsappMessage += `Alamat:${address}\n`;
+    whatsappMessage += `Jumlah Produk yang dibeli:${totalQuantity}\n\n`;
+
+    cart.forEach((item) => {
+        let positionThisProductInCart = listProduct.findIndex((value) => value.id == item.product_id);
+        let productInfo = listProduct[positionThisProductInCart];
+
+        whatsappMessage += `${productInfo.name}\n`;
+        whatsappMessage += `Harga:${productInfo.price}\n`;
+        whatsappMessage += `Jumlah:${item.quantity}\n`;
+        whatsappMessage += `Subtotal:${productInfo.price * item.quantity}\n\n`;
+    });
+
+    whatsappMessage += `Total:${calculateGrandTotal()}\n`;
 
     // Encode pesan untuk URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
     // Buka window WhatsApp
-    window.open(`https://wa.me/6285971690136?text=` + encodedMessage);
+    window.open(`https://wa.me/62859512661373?text=` + encodedMessage);
 };
 
 // Fungsi untuk menghitung total keseluruhan
@@ -211,7 +214,7 @@ const sendWhatsAppMessage = () => {
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
     // Open WhatsApp link in a new window/tab
-    window.open(`https://wa.me/6285971690136?text=` + encodedMessage);
+    window.open(`https://wa.me/62859512661373?text=` + encodedMessage);
 }
 
 kirimBtn.addEventListener('click', () => {
@@ -222,6 +225,46 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainElement = document.querySelector('.element');
     mainElement.classList.add('fade-in');
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    
+    var modal = document.getElementById('checkout-modal');
+
+    // Get the <span> element that closes the modal
+    var closeBtn = document.getElementsByClassName('closeform')[0];
+    
+    // When the user clicks the checkout button, open the modal 
+    checkoutBtn.onclick = function () {
+        if (cart.length > 0) {
+            modal.style.display = 'block';
+            cartTab.classList.remove('active');
+            // e.preventDefault();
+        } else {
+            alert('Keranjang kamu kosong');
+            return;
+        }
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    closeBtn.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+});
+    // Handle form submission
+    var submitBtn = document.querySelector('#checkout-form .submit');
+submitBtn.addEventListener('click', function () {
+    checkout();
+    modal.style.display = 'none';
+});
+
+
 
 const initApp = () => {
     //get from json
@@ -237,6 +280,4 @@ const initApp = () => {
             }
         });
 };
-
 initApp();
-

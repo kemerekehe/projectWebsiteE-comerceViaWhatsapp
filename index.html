@@ -147,6 +147,25 @@
     </footer>
     <!-- End Footer -->
 
+    <!-- Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="closeform">&times;</span>
+            <h2>Formulir pembelian</h2>
+            <form id="checkout-form">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required placeholder="Nama lengkap">
+    
+                <label for="phone">Nomor Telepon:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Nomor telepon aktif">
+    
+                <label for="address">Alamat:</label>
+                <textarea id="address" name="address" required placeholder="Alamat lengkap beserta kode pos"></textarea>
+                <div class="submit"><button type="button" >Checkout</button></div>
+            </form>
+        </div>
+    </div>
+    <!-- End Modal -->
     <script>feather.replace();</script>
     <script src="js/script.js"></script>
 </body>

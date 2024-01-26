@@ -22,7 +22,7 @@
     },
     {
         "id": 4,
-        "name": "Pentol Jamur (perKg)",
+        "name": "Pentol Jamur",
         "price": 0,
         "image": "./img/Pentol-Jamur.jpeg",
         "quantity" : "g"
